@@ -1,0 +1,11 @@
+{
+  "name": "boudin-legret/spotify-php",
+  "description": "TP Spotify en PHP 8 avec PHPUnit",
+  "type": "project",
+  "require": {
+    "php": ">=8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0"
+  }
+}
