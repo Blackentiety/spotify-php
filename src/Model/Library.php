@@ -37,4 +37,12 @@ class Library {
     public function getArtists(): array {
         return $this->artists;
     }
+    public function addPlaylist(Playlist $playlist): void {
+        if (!in_array($playlist, $this->playlists)) {
+            $this->playlists[] = $playlist;
+        }
+    }
+    public function getPlaylists(): array {
+        return $this->playlists;
+    }
 }
