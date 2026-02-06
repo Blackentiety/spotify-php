@@ -10,4 +10,13 @@ final class Album {
         $this->artist = $artist;
         $artist->addAlbum($this);
     }
+    public function getTitle(): string {
+        return $this->title;
+    }
+    public function getYear(): int {
+        return $this->year;
+    }
+    public function getArtist(): Artist {
+        return $this->artist;
+    }
 }
