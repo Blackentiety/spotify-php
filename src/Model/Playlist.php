@@ -60,4 +60,13 @@ class Playlist {
         }
         return $totalRating/count($this->tracks);
     }
+    public function filterByMaxDuration(int $maxDuration): array  {
+        $tracks = [];
+        foreach ($this->tracks as $track) {
+            if ($track->getDuration() <= $maxDuration) {
+                $tracks[] = $track;
+            }
+        }
+        return $tracks;
+    }
 }
