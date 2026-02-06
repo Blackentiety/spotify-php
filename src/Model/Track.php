@@ -38,4 +38,7 @@ class Track {
             $this->rating = $rating;
         }
     }
+    public function setAlbum(Album $album):void {
+        $this->album = $album;
+    }
 }
