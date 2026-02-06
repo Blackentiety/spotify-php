@@ -13,7 +13,7 @@ class Playlist {
     public function getTracks(): array {
         return $this->tracks;
     }
-    public function addTrack(Track $track) {
+    public function addTrack(Track $track): void {
         $this->tracks[] = $track;
     }
     public function getTotalDuration():int {
