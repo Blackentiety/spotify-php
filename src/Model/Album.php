@@ -34,4 +34,22 @@ final class Album {
         }
         return $duration;
     }
+    public function getFormattedDuration(): string {
+        $duration = $this->getDuration();
+        // On calcule les heures avec une division entière
+        $heures = intdiv($duration, 3600);
+        $duration -= $heures * 3600;
+        // On calcule les minutes avec une division entière
+        $minutes = intdiv($duration, 60);
+
+        // On récupère le reste (les secondes) avec le modulo %
+        $seconds = $duration % 60;
+
+        // On utilise sprintf pour forcer les deux chiffres sur les secondes (05 au lieu de 5)
+        if ($heures > 0) {
+            return sprintf('%d:%02d:%02d', $heures, $minutes, $seconds);
+        } else {
+            return sprintf('%d:%02d', $minutes, $seconds);
+        }
+    }
 }
