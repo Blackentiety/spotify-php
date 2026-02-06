@@ -7,7 +7,7 @@ class Playlist {
         $this->title = $title;
         $this->tracks = [];
     }
-    public function getTitle(): string {
+    public function getName(): string {
         return $this->title;
     }
     public function getTracks(): array {
