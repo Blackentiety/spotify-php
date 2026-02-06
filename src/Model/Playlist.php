@@ -69,4 +69,11 @@ class Playlist {
         }
         return $tracks;
     }
+    public function removeTrack(Track $track): void {
+        if (in_array($track, $this->tracks)) {
+            $index = array_search($track, $this->tracks);
+            unset($this->tracks[$index]);
+            $this->tracks = array_values($this->tracks);
+        }
+    }
 }
