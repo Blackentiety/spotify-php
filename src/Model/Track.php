@@ -44,4 +44,7 @@ class Track {
     public function getAlbum(): Album {
         return $this->album;
     }
+    public function getArtist(): Artist {
+        return $this->album->getArtist();
+    }
 }
