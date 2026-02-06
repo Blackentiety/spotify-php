@@ -45,4 +45,22 @@ class Library {
     public function getPlaylists(): array {
         return $this->playlists;
     }
+    public function getStatistics(): array {
+        $stats = ['artists_count'=>0, 'albums_count'=>0, 'tracks_count'=>0, 'playlists_count'=>0, 'total_duration'=>0, 'average_rating'=>0];
+        foreach ($this->tracks as $track) {
+            $stats['tracks_count']++;
+            $stats['average_rating']+= $track->getRating();
+            $stats['total_duration']+= $track->getDuration();
+        }
+        foreach ($this->albums as $album) {
+            $stats['albums_count']++;
+        }
+        foreach ($this->artists as $artist) {
+            $stats['artists_count']++;
+        }
+        foreach ($this->playlists as $playlist) {
+            $stats['playlists_count']++;
+        }
+        return $stats;
+    }
 }
