@@ -14,7 +14,9 @@ class Artist {
         return $this->name;
     }
     public function addGenre(string $genre): void {
-        $this->genres[] = $genre;
+        if (!in_array($genre, $this->genres)) {
+            $this->genres[] = $genre;
+        }
     }
     public function getGenres(): array {
         return $this->genres;
