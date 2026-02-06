@@ -20,6 +20,11 @@
   },
   "scripts": {
     "test": "phpunit",
-    "test:coverage": "phpunit --coverage-html coverage"
+    "test:coverage": "phpunit --coverage-html coverage",
+    "test:Artist": "phpunit tests/AlbumTest.php",
+    "test:Track": "phpunit tests/TrackTest.php",
+    "test:Album": "phpunit tests/AlbumTest.php",
+    "test:Playlist" : "phpunit tests/PlaylistTest.php",
+    "test:Library" : "phpunit tests/LibraryTest.php"
   }
 }
