@@ -41,4 +41,7 @@ class Track {
     public function setAlbum(Album $album):void {
         $this->album = $album;
     }
+    public function getAlbum(): Album {
+        return $this->album;
+    }
 }
