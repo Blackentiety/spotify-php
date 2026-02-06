@@ -14,4 +14,8 @@ class Artist {
     public function addGenre(string $genre): void {
         $this->genres[] = $genre;
     }
+
+    public function getGenres(): array {
+        return $this->genres;
+    }
 }
