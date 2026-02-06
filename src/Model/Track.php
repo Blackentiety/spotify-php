@@ -6,11 +6,12 @@ class Track {
     private string $title;
     private int $length;
     private int $rating;
-    private Album $album;
+    private ?Album $album;
     public function __construct(string $title, int $length) {
         $this->title = $title;
         $this->length = $length;
         $this->rating = 0;
+
     }
     public function getTitle(): string {
         return $this->title;

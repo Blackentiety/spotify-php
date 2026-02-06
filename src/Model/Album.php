@@ -23,6 +23,7 @@ final class Album {
     }
     public function addTrack(Track $track): void {
         $this->tracks[] = $track;
+        $track->setAlbum($this);
     }
     public function getTracks(): array {
         return $this->tracks;
