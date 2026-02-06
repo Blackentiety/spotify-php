@@ -13,4 +13,7 @@ class Playlist {
     public function getTracks(): array {
         return $this->tracks;
     }
+    public function addTrack(Track $track) {
+        $this->tracks[] = $track;
+    }
 }
