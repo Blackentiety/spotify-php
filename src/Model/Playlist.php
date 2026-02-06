@@ -41,4 +41,13 @@ class Playlist {
             return sprintf('%d:%02d', $minutes, $seconds);
         }
     }
+    public function filterByMinRating(int $minRating): array {
+        $tracks = [];
+        foreach ($this->tracks as $track) {
+            if ($track->getRating() >= $minRating) {
+                $tracks[] = $track;
+            }
+        }
+        return $tracks;
+    }
 }
