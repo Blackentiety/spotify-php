@@ -4,9 +4,11 @@ namespace Spotify\Model;
 class Artist {
     private string $name;
     private array $genres;
+    private array $albums;
     public function __construct(string $name){
         $this->name = $name;
         $this->genres = [];
+        $this->albums = [];
     }
     public function getName(): string {
         return $this->name;
@@ -17,4 +19,5 @@ class Artist {
     public function getGenres(): array {
         return $this->genres;
     }
+
 }
