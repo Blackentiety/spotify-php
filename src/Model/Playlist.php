@@ -53,4 +53,11 @@ class Playlist {
     public function shuffle(): void {
         shuffle($this->tracks);
     }
+    public function getAverageRating(): float {
+        $totalRating = 0;
+        foreach ($this->tracks as $track) {
+            $totalRating += $track->getRating();
+        }
+        return $totalRating/count($this->tracks);
+    }
 }
