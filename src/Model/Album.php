@@ -27,4 +27,11 @@ final class Album {
     public function getTracks(): array {
         return $this->tracks;
     }
+    public function getDuration(): int {
+        $duration = 0;
+        foreach ($this->tracks as $track) {
+            $duration += $track->getDuration();
+        }
+        return $duration;
+    }
 }
