@@ -62,14 +62,14 @@ class LibraryTest extends TestCase
         $playlist = new Playlist('My Playlist');
         $playlist->addTrack($tracks[0]);
         $playlist->addTrack($tracks[1]);
-        TODO:
+
         $library->addPlaylist($playlist);
         $stats = $library->getStatistics();
         $this->assertEquals(2, $stats['artist_count']);
         $this->assertEquals(3, $stats['album_count']);
         $this->assertEquals(5, $stats['track_count']);
         $this->assertEquals(1, $stats['playlist_count']);
-        $this->assertEquals(540, $stats['total_duration']); // (60+120+180+240+300) = 900
+        $this->assertEquals(900, $stats['total_duration']); // (60+120+180+240+300) = 900
         $this->assertEquals(3.0, $stats['average_rating']); // (1+2+3+4+5)/5 = 3
     }
 

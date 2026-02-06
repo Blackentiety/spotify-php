@@ -24,8 +24,18 @@ class Library {
         }
     }
     public function addAlbum(Album $album): void {
+        $tracks = $album->getTracks();
+        $artist = $album->getArtist();
         if (!in_array($album, $this->albums)) {
             $this->albums[] = $album;
+        }
+        foreach ($tracks as $track) {
+            if (!in_array($track, $this->tracks)) {
+                $this->tracks[] = $track;
+            }
+        }
+        if (!in_array($artist, $this->artists)) {
+            $this->artists[] = $artist;
         }
     }
     public function getTracks(): array {
@@ -46,20 +56,21 @@ class Library {
         return $this->playlists;
     }
     public function getStatistics(): array {
-        $stats = ['artists_count'=>0, 'albums_count'=>0, 'tracks_count'=>0, 'playlists_count'=>0, 'total_duration'=>0, 'average_rating'=>0];
+        $stats = ['artist_count'=>0, 'album_count'=>0, 'track_count'=>0, 'playlist_count'=>0, 'total_duration'=>0, 'average_rating'=>0];
         foreach ($this->tracks as $track) {
-            $stats['tracks_count']++;
+            $stats['track_count']++;
             $stats['average_rating']+= $track->getRating();
             $stats['total_duration']+= $track->getDuration();
         }
+        $stats['average_rating']/= count($this->tracks);
         foreach ($this->albums as $album) {
-            $stats['albums_count']++;
+            $stats['album_count']++;
         }
         foreach ($this->artists as $artist) {
-            $stats['artists_count']++;
+            $stats['artist_count']++;
         }
         foreach ($this->playlists as $playlist) {
-            $stats['playlists_count']++;
+            $stats['playlist_count']++;
         }
         return $stats;
     }
