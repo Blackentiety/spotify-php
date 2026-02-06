@@ -12,4 +12,16 @@ class Track {
         $this->length = $length;
         $this->rating = 0;
     }
+    public function getTitle(): string {
+        return $this->title;
+    }
+    public function getDuration(): int {
+        return $this->length;
+    }
+    public function getRating(): int {
+        return $this->rating;
+    }
+    public function setRating(int $rating): void {
+        $this->rating = $rating;
+    }
 }
