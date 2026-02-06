@@ -50,4 +50,7 @@ class Playlist {
         }
         return $tracks;
     }
+    public function shuffle(): void {
+        shuffle($this->tracks);
+    }
 }
