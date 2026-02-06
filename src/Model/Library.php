@@ -18,6 +18,16 @@ class Library {
             }
         }
     }
+    public function addArtist(Artist $artist): void {
+        if (!in_array($artist, $this->artists)) {
+            $this->artists[] = $artist;
+        }
+    }
+    public function addAlbum(Album $album): void {
+        if (!in_array($album, $this->albums)) {
+            $this->albums[] = $album;
+        }
+    }
     public function getTracks(): array {
         return $this->tracks;
     }
