@@ -19,5 +19,11 @@ class Artist {
     public function getGenres(): array {
         return $this->genres;
     }
+    public function addAlbum(Album $album): void {
+        $this->albums[] = $album;
+    }
+    public function getAlbums(): array {
+        return $this->albums;
+    }
 
 }
