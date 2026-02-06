@@ -27,5 +27,14 @@ class Artist {
     public function getAlbums(): array {
         return $this->albums;
     }
+    public function getTotalTracks(): int {
+        $total = 0;
+        foreach ($this->albums as $album) {
+            foreach ($album->getTracks() as $track) {
+                $total += 1;
+            };
+        }
+        return $total;
+    }
 
 }
