@@ -32,6 +32,10 @@ class Track {
         return $this->rating;
     }
     public function setRating(int $rating): void {
-        $this->rating = $rating;
+        if ($rating < 0 || $rating > 5) {
+            throw new \InvalidArgumentException("Rating must be between 0 and 5");
+        } else {
+            $this->rating = $rating;
+        }
     }
 }
