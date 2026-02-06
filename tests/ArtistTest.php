@@ -1,4 +1,4 @@
-<?php<?php
+<?php
 declare(strict_types=1);
 namespace Spotify\Tests\Model;
 use PHPUnit\Framework\TestCase;
@@ -27,11 +27,6 @@ class ArtistTest extends TestCase
         $album2 = new Album('The Wall', 1979, $artist);
         $this->assertCount(2, $artist->getAlbums());
         $this->assertEquals('The Dark Side of the Moon', $artist->getAlbums()[0]->getTitle());
-        La Classe Album
-Spécifications :
-Un album a un titre, une année, une collection de pistes (tracks) et un artiste.
-    Méthodes : getTitle(), getYear(), getTracks(), addTrack(), getDuration(), getFormattedDuration()
-Tests :
 }
     public function testArtistGetTotalTracks(): void
     {
