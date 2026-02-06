@@ -18,4 +18,13 @@ class Library {
             }
         }
     }
+    public function getTracks(): array {
+        return $this->tracks;
+    }
+    public function getAlbums(): array {
+        return $this->albums;
+    }
+    public function getArtists(): array {
+        return $this->artists;
+    }
 }
