@@ -74,4 +74,24 @@ class Library {
         }
         return $stats;
     }
+    public function search(string $query): array {
+        $results = ['tracks'=>[], 'albums'=>[], 'artists'=>[]];
+        foreach ($this->tracks as $track) {
+            // str_contains vérifie si $query est dans le titre
+            if (str_contains(strtolower($track->getTitle()), strtolower($query))) {
+                $results['tracks'][] = $track;
+            }
+        }
+        foreach ($this->albums as $album) {
+            if (str_contains(strtolower($album->getTitle()), strtolower($query))) {
+                $results['albums'][] = $album;
+            }
+        }
+        foreach ($this->artists as $artist) {
+            if (str_contains(strtolower($artist->getName()), strtolower($query))) {
+                $results['artists'][] = $artist;
+            }
+        }
+        return $results;
+    }
 }
